@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NEXT GEN VIC - Premium Tyre Solutions for Australia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60012',
+                            redhover: '#cc0010',
+                            dark: '#0F172A',
+                            slate: '#F1F5F9',
+                            accent: '#2563EB'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scrollbar & effects */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .text-watermark {
+            -webkit-text-stroke: 1.5px rgba(203, 213, 225, 0.6);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center group">
+                <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-[113px] w-auto group-hover:scale-105 transition-transform">
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="Index.html" class="relative py-2 text-brand-red font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-red after:transition-all after:duration-300">Home</a>
+                <a href="about.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                <a href="products.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Products</a>
+                <a href="contact.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Contact Us</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="dealers.html" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden py-12 lg:py-16">
+        
+        <!-- Gray to Transparent Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-200/60 via-slate-100/30 to-transparent pointer-events-none z-0"></div>
+        
+        <!-- Background Typography Watermark (Clean & Non-overlapping) -->
+        <div class="absolute inset-x-0 top-4 sm:top-8 flex justify-center pointer-events-none select-none overflow-hidden z-0">
+            <h1 class="font-display text-[14vw] lg:text-[12vw] font-black tracking-tight text-slate-300/40 uppercase whitespace-nowrap leading-none select-none">
+                THE NEXT GEN
+            </h1>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Copy & Actions -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Sub-badge with Tyre Icon -->
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center text-white">
+                            <i data-lucide="disc" class="w-3.5 h-3.5 animate-spin-slow"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Exclusive Australian Distributor</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                        Empowering Australian Mobility with Precision-Engineered Tyres
+                    </h1>
+
+                    <!-- Description Body -->
+                    <p class="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Exclusive importer of Praxent and Botrian tyre brands. Combining over 34 years of automotive expertise with next-generation manufacturing technology.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <!-- Main Season CTA Pill inspired by Kumho promo design -->
+                        <div class="inline-flex items-center bg-brand-red text-white rounded-2xl p-1.5 pr-4 shadow-xl shadow-brand-red/30 hover:bg-brand-redhover transition-all cursor-pointer group" onclick="scrollToSection('lineup')">
+                            <div class="bg-red-700/60 px-3.5 py-2 rounded-xl text-left mr-3">
+                                <span class="block text-[10px] uppercase font-bold text-red-200 tracking-wider">Season</span>
+                                <span class="text-sm font-black tracking-wide">Summer 2026</span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white text-brand-red flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                <i data-lucide="chevron-right" class="w-5 h-5 stroke-[3]"></i>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Tech Specs Button -->
+                        <a href="#technologies" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 text-slate-800 font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+                            <span>Explore Tech Specs</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Bar -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <div class="font-display font-black text-2xl sm:text-3xl text-slate-900">34+</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Years Expertise</div>
+                        </div>
+                        <div>
+                            <div class="font-display font-black text-2xl sm:text-3xl text-slate-900">650K <span class="text-xs text-slate-400 font-normal">m²</span></div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Smart Factory</div>
+                        </div>
+                        <div>
+                            <div class="font-display font-black text-2xl sm:text-3xl text-brand-red">120+</div>
+                            <div class="text-xs text-slate-500 font-medium mt-0.5">Countries Served</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Interactive Cutout Tyre Display with Callouts -->
+                <div class="lg:col-span-6 relative flex justify-center items-center py-6 -mt-20">
+                    
+                    <!-- Glow effect under tire -->
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-brand-red/10 rounded-full blur-3xl -z-10"></div>
+                    
+                    <!-- Tyre Visual Wrapper -->
+                    <div class="relative w-full max-w-[650px] animate-float">
+                        
+                        <!-- Hero Tyre Image -->
+                        <img src="images/hero_tire_img.png" alt="Praxent Premium Tyre" class="w-full h-auto drop-shadow-2xl select-none">
+
+                        <!-- CALLOUT HOTSPOT 1: Safety Technologies (Top Right) -->
+                        <div class="absolute -top-2 -right-2 sm:right-0 z-20 cursor-pointer group" onclick="showHotspotDetail('safety')">
+                            <div class="flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-lg border border-slate-200/80 group-hover:scale-105 transition-transform">
+                                <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white shadow-sm">
+                                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <span class="text-xs font-bold text-slate-800 tracking-tight">safety technologies</span>
+                            </div>
+                            <span class="absolute -bottom-1 left-4 w-2 h-2 bg-white rotate-45 border-r border-b border-slate-200"></span>
+                        </div>
+
+                        <!-- CALLOUT HOTSPOT 2: Test Victories (Middle Left) -->
+                        <div class="absolute top-1/2 -left-4 sm:-left-8 -translate-y-1/2 z-20 cursor-pointer group" onclick="showHotspotDetail('tests')">
+                            <div class="flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-lg border border-slate-200/80 group-hover:scale-105 transition-transform">
+                                <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white shadow-sm">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-white"></i>
+                                </div>
+                                <span class="text-xs font-bold text-slate-800 tracking-tight">test victories</span>
+                            </div>
+                        </div>
+
+                        <!-- CALLOUT HOTSPOT 3: Wide Assortment (Bottom Right) -->
+                        <div class="absolute -bottom-2 right-4 sm:right-8 z-20 cursor-pointer group" onclick="showHotspotDetail('assortment')">
+                            <div class="flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full shadow-lg border border-slate-200/80 group-hover:scale-105 transition-transform">
+                                <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white shadow-sm">
+                                    <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+                                </div>
+                                <span class="text-xs font-bold text-slate-800 tracking-tight">wide assortment</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Results Section -->
+    <section id="test-results" class="relative py-24 overflow-hidden" style="background: url('images/Toyota.jpeg') no-repeat center center; background-size: cover;">
+        
+        <div class="absolute inset-0 bg-white/60 pointer-events-none z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-brand-red uppercase">Tested & Proven</span>
+                </div>
+                <h2 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Engineered for Australian Roads
+                </h2>
+                <p class="text-slate-700 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    From high-speed interstate touring to rough regional tarmac and extreme outback trails, our tyres deliver exceptional resilience.
+                </p>
+            </div>
+
+            <!-- Test Results Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Result 1 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <i data-lucide="droplets" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-brand-red font-display font-black text-xs tracking-widest mb-2">ACTIVE AQUA DRAINAGE</div>
+                    <div class="text-2xl font-black text-slate-900 mb-1">A+ GRADE</div>
+                    <div class="text-xs text-slate-700">High-Angle Grooves Prevent Hydroplaning</div>
+                </div>
+
+                <!-- Result 2 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <i data-lucide="volume-x" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-brand-red font-display font-black text-xs tracking-widest mb-2">BIONIC PITCH SEQUENCING</div>
+                    <div class="text-2xl font-black text-slate-900 mb-1">68 dB</div>
+                    <div class="text-xs text-slate-700">Ultra-Quiet Cabin on Coarse Surfaces</div>
+                </div>
+
+                <!-- Result 3 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-brand-red font-display font-black text-xs tracking-widest mb-2">ADR COMPLIANT</div>
+                    <div class="text-2xl font-black text-slate-900 mb-1">CERTIFIED</div>
+                    <div class="text-xs text-slate-700">Meets Australian Design Rules</div>
+                </div>
+
+                <!-- Result 4 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl border border-slate-200/80 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-red/20 text-brand-red flex items-center justify-center mx-auto mb-4 shadow-md">
+                        <i data-lucide="truck" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-brand-red font-display font-black text-xs tracking-widest mb-2">HEAVY-DUTY BUILD</div>
+                    <div class="text-2xl font-black text-slate-900 mb-1">REINFORCED</div>
+                    <div class="text-xs text-slate-700">High-Tensile Steel Belts & Carcasses</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tyre Finder Filter Section -->
+    <section id="tire-finder" class="py-12 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background ambient accent -->
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-3xl mb-8">
+                    <span class="text-brand-red text-xs font-bold tracking-widest uppercase">Precision Search</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold mt-1">Find the exact fit for your vehicle</h2>
+                </div>
+
+                <!-- Form Controls -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 relative z-10">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2">WIDTH</label>
+                        <select id="searchWidth" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            <option value="">Any</option>
+                            <option value="185">185 mm</option>
+                            <option value="195">195 mm</option>
+                            <option value="205">205 mm</option>
+                            <option value="215">215 mm</option>
+                            <option value="225">225 mm</option>
+                            <option value="235">235 mm</option>
+                            <option value="245">245 mm</option>
+                            <option value="255">255 mm</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2">ASPECT RATIO</label>
+                        <select id="searchAspect" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            <option value="">Any</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                            <option value="60">60</option>
+                            <option value="65">65</option>
+                            <option value="70">70</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2">RIM SIZE</label>
+                        <select id="searchRim" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            <option value="">Any</option>
+                            <option value="13">R13</option>
+                            <option value="14">R14</option>
+                            <option value="15">R15</option>
+                            <option value="16">R16</option>
+                            <option value="17">R17</option>
+                            <option value="18">R18</option>
+                            <option value="19">R19</option>
+                            <option value="20">R20</option>
+                            <option value="22">R22</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 mb-2">CATEGORY</label>
+                        <select id="searchCategory" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                            <option value="">All Categories</option>
+                            <option value="hp">High Performance</option>
+                            <option value="uhp">Ultra High Performance</option>
+                            <option value="ev">Electric Vehicle</option>
+                            <option value="ht">Highway Terrain</option>
+                            <option value="commercial">Commercial Van</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-end">
+                        <button onclick="handleSearch()" class="w-full bg-brand-red hover:bg-brand-redhover text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-brand-red/30 flex items-center justify-center gap-2">
+                            <i data-lucide="search" class="w-4 h-4"></i>
+                            <span>Search Tyres</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section (hidden by default) -->
+    <section id="search-results" class="hidden py-12 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Search Results</h2>
+                    <p id="search-results-count" class="text-slate-500 text-sm mt-1"></p>
+                </div>
+                <button onclick="clearSearch()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition-all">
+                    <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                    Clear Search
+                </button>
+            </div>
+            <div id="search-results-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div id="search-no-results" class="hidden text-center py-16">
+                <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="search-x" class="w-8 h-8 text-slate-400"></i>
+                </div>
+                <h3 class="font-display font-bold text-xl text-slate-900 mb-2">No tyres found</h3>
+                <p class="text-slate-500 text-sm">Try adjusting your filters or <a href="contact.html" class="text-brand-red font-semibold hover:underline">contact our team</a> for help finding the right fit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lineup Showcase -->
+    <section id="lineup" class="relative py-24 bg-gradient-to-b from-[#F4F5F7] to-white overflow-hidden">
+        
+        <!-- Gray to Transparent Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-100/20 to-transparent pointer-events-none z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="disc" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Flagship Models</span>
+                </div>
+                <h2 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Praxent Tyre Lineup
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    From High Performance to All-Terrain and Electric Vehicle tyres, engineered for uncompromising safety and durability.
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1: Excelander PH08 (HP) -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-2">
+                    <div>
+                        <div class="h-52 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HP Series</span>
+                            <img src="images/EXCELANDER-PH08.png" alt="Excelander PH08" class="w-40 h-40 object-contain drop-shadow-lg">
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-slate-900">Excelander PH08</h3>
+                        <p class="text-xs text-slate-500 mt-1">Quiet Comfort & Eco-Efficiency</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">4 longitudinal water-evacuation channels and seagull-wing bionic pitch technology to eliminate cabin road roar.</p>
+                        <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                            <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">13" – 16"</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">185 – 225 mm</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">T – V</span></div>
+                        </div>
+                    </div>
+                    <a href="excelander-ph08.html" class="mt-6 w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">
+                        Enquire Now
+                    </a>
+                </div>
+
+                <!-- Product Card 2: Evoltour PEV80 (EV) -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-2">
+                    <div>
+                        <div class="h-52 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-3 left-3 bg-slate-800 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">EV Specialized</span>
+                            <img src="images/EVOLTOUR-PEV80.png" alt="Evoltour PEV80" class="w-40 h-40 object-contain drop-shadow-lg">
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-slate-900">Evoltour PEV80</h3>
+                        <p class="text-xs text-slate-500 mt-1">Instant Torque & Extended Range</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Solution-polymerized SBR compound for lower rolling resistance, high battery efficiency, and cabin silence.</p>
+                        <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                            <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">17" – 21" (XL)</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">205 – 255 mm</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">V – W</span></div>
+                        </div>
+                    </div>
+                    <a href="evoltour-pev80.html" class="mt-6 w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">
+                        Enquire Now
+                    </a>
+                </div>
+
+                <!-- Product Card 3: Botrian ACCELEROAD BC25 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between transform hover:-translate-y-2">
+                    <div>
+                        <div class="h-52 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center p-4 mb-6 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">Botrian</span>
+                            <img src="images/ACCELEROAD-BC25.png" alt="Acceleroad BC25" class="w-40 h-40 object-contain drop-shadow-lg">
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-slate-900">Acceleroad BC25</h3>
+                        <p class="text-xs text-slate-500 mt-1">Premium Highway Comfort</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Advanced silica compound for superior wet grip and fuel efficiency on Australian highways.</p>
+                        <div class="mt-3 space-y-1.5 text-xs text-slate-600">
+                            <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">15" – 20"</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">195 – 265 mm</span></div>
+                            <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">H – V</span></div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="mt-6 w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">
+                        Enquire Now
+                    </a>
+                </div>
+
+            </div>
+            
+            <!-- Bottom CTA -->
+            <div class="mt-16 text-center">
+                <a href="products.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white border border-slate-200/90 text-slate-800 font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow-lg">
+                    <span>View Full Product Catalog</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="relative py-24 bg-gradient-to-b from-white to-[#F4F5F7] overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Innovation</span>
+                </div>
+                <h2 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Industry 4.0 Smart Manufacturing
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    Manufactured by Gubersail Tyre in a 650,000 m² smart factory with intelligent automation and precision robotics.
+                </p>
+            </div>
+
+            <!-- Technology Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                        <i data-lucide="factory" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Smart Factory Automation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Fully automated production lines ensure micron-level uniformity, structural balance, and dynamic equilibrium across every tyre produced.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                        <i data-lucide="leaf" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Eco-Friendly Technology</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Low-pollution materials and solution-polymerized synthetic formulations create energy-efficient, low-emission tyres for sustainable mobility.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 text-brand-red flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                        <i data-lucide="flask-conical" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Dedicated R&D Testing</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Advanced research facilities and on-site testing tracks evaluate wet-grip performance, braking distances, high-speed stability, and rolling resistance.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="Index.html" class="flex items-center gap-2 text-white font-display font-black text-lg mb-3">
+                        <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 w-auto">
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Exclusive importer and master distributor of world-class Praxent and Botrian tyre brands across Australia.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Products</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="products.html" class="hover:text-white transition-colors">High Performance (HP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Ultra High Performance (UHP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Electric Vehicle (EV)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">All-Terrain & Highway</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Contact</h4>
+                    <p class="text-xs text-slate-400">5 Advance Bvd<br>Officer South VIC 3809<br>Australia</p>
+                    <p class="text-xs text-slate-400 mt-2">Email:<br><span class="text-white font-bold">info@thenextgenvic.com.au</span></p>
+                    <a href="dealers.html" class="inline-flex items-center gap-1 mt-3 text-xs text-brand-red hover:text-brand-redhover transition-colors font-semibold">
+                        <span>Find a Dealer</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 THE NEXT GEN VIC PTY LTD. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Hotspot Detail Modal -->
+    <div id="infoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal('infoModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Dealer Locator Modal -->
+    <div id="dealerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative">
+            <button onclick="closeModal('dealerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="font-display font-extrabold text-2xl text-slate-900 mb-2">Find a Certified Dealer</h3>
+            <p class="text-sm text-slate-600 mb-6">Enter your city or postcode to locate an authorised Praxent fitment centre near you.</p>
+            <div class="flex gap-2 mb-4">
+                <input type="text" placeholder="Enter postcode or city..." class="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-red">
+                <button onclick="window.location.href='dealers.html'" class="bg-brand-red hover:bg-brand-redhover text-white font-bold px-6 py-3 rounded-xl text-sm">
+                    Search
+                </button>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl text-xs text-slate-500">
+                Authorised dealers across all Australian states and territories.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+
+        // Product database with full spec ranges
+        const productDB = [
+            {
+                name: "Excelander PH07",
+                brand: "Praxent",
+                category: "hp",
+                tagline: "Everyday Comfort & Efficiency",
+                desc: "Reliable all-season performance with optimised tread compound for even wear and fuel efficiency on Australian roads.",
+                image: "images/EXCELANDER-PH07.png",
+                link: "contact.html",
+                rimMin: 13, rimMax: 16,
+                widthMin: 175, widthMax: 215,
+                aspectMin: 55, aspectMax: 70,
+                speedRating: "T \u2013 V",
+                badge: "HP",
+                badgeColor: "bg-brand-red"
+            },
+            {
+                name: "Excelander PH08",
+                brand: "Praxent",
+                category: "hp",
+                tagline: "Quiet Comfort & Eco-Efficiency",
+                desc: "4 longitudinal water-evacuation channels and seagull-wing bionic pitch technology to eliminate cabin road roar.",
+                image: "images/EXCELANDER-PH08.png",
+                link: "excelander-ph08.html",
+                rimMin: 13, rimMax: 16,
+                widthMin: 185, widthMax: 225,
+                aspectMin: 55, aspectMax: 70,
+                speedRating: "T \u2013 V",
+                badge: "HP",
+                badgeColor: "bg-brand-red"
+            },
+            {
+                name: "Furijeter PU90",
+                brand: "Praxent",
+                category: "uhp",
+                tagline: "Boundless Control & Precision",
+                desc: "Meteor-inspired lateral grooves and silica-reinforced compound for instant braking and maximum cornering grip.",
+                image: "images/FURIJETER-PU90.png",
+                link: "furijeter-pu90.html",
+                rimMin: 15, rimMax: 22,
+                widthMin: 195, widthMax: 285,
+                aspectMin: 35, aspectMax: 55,
+                speedRating: "V \u2013 Y",
+                badge: "UHP",
+                badgeColor: "bg-brand-red"
+            },
+            {
+                name: "Evoltour PEV80",
+                brand: "Praxent",
+                category: "ev",
+                tagline: "Instant Torque & Extended Range",
+                desc: "Solution-polymerised SBR compound for lower rolling resistance, high battery efficiency, and cabin silence.",
+                image: "images/EVOLTOUR-PEV80.png",
+                link: "evoltour-pev80.html",
+                rimMin: 17, rimMax: 21,
+                widthMin: 205, widthMax: 255,
+                aspectMin: 40, aspectMax: 55,
+                speedRating: "V \u2013 W",
+                badge: "EV",
+                badgeColor: "bg-blue-600"
+            },
+            {
+                name: "Patheris PT7",
+                brand: "Praxent",
+                category: "ht",
+                tagline: "All-Season Highway Touring",
+                desc: "Balanced steel-sheet-to-groove ratio prevents stone drilling and guarantees even treadwear across long journeys.",
+                image: "images/PATHERIS-PT7.png",
+                link: "patheris-pt7.html",
+                rimMin: 15, rimMax: 22,
+                widthMin: 205, widthMax: 285,
+                aspectMin: 45, aspectMax: 75,
+                speedRating: "H \u2013 W",
+                badge: "HT",
+                badgeColor: "bg-green-600"
+            },
+            {
+                name: "Robavans PV18",
+                brand: "Praxent",
+                category: "commercial",
+                tagline: "High Mileage & Heavy Axle Loads",
+                desc: "Full C-spec commercial van tyre with reinforced radial ribs designed to handle commercial payload stresses.",
+                image: "images/ROBAVANS-PV18.png",
+                link: "robavans-pv18.html",
+                rimMin: 13, rimMax: 17,
+                widthMin: 155, widthMax: 235,
+                aspectMin: 60, aspectMax: 75,
+                speedRating: "Q \u2013 H",
+                badge: "Commercial",
+                badgeColor: "bg-slate-700"
+            },
+            {
+                name: "Acceleroad BC25",
+                brand: "Botrian",
+                category: "hp",
+                tagline: "Premium Highway Comfort",
+                desc: "Advanced silica compound for superior wet grip and fuel efficiency on Australian highways.",
+                image: "images/ACCELEROAD-BC25.png",
+                link: "contact.html",
+                rimMin: 15, rimMax: 20,
+                widthMin: 195, widthMax: 265,
+                aspectMin: 50, aspectMax: 65,
+                speedRating: "H \u2013 V",
+                badge: "HP",
+                badgeColor: "bg-green-700"
+            },
+            {
+                name: "Vorttexa BU78",
+                brand: "Botrian",
+                category: "uhp",
+                tagline: "Extreme Handling & Precision",
+                desc: "Aggressive directional tread pattern with high-grip silica compound for maximum lateral control.",
+                image: "images/VORTTEXA-BU78.png",
+                link: "contact.html",
+                rimMin: 17, rimMax: 22,
+                widthMin: 215, widthMax: 295,
+                aspectMin: 30, aspectMax: 50,
+                speedRating: "W \u2013 Y",
+                badge: "UHP",
+                badgeColor: "bg-green-700"
+            },
+            {
+                name: "Transvelo BT6",
+                brand: "Botrian",
+                category: "ht",
+                tagline: "Highway Touring & All-Weather",
+                desc: "Four-channel water evacuation and reinforced shoulder blocks for stable highway cruising.",
+                image: "images/TRANSVELO-BT6.png",
+                link: "contact.html",
+                rimMin: 16, rimMax: 20,
+                widthMin: 215, widthMax: 275,
+                aspectMin: 50, aspectMax: 70,
+                speedRating: "H \u2013 V",
+                badge: "HT",
+                badgeColor: "bg-green-700"
+            },
+            {
+                name: "Duravans BV28",
+                brand: "Botrian",
+                category: "commercial",
+                tagline: "Commercial Fleet Durability",
+                desc: "Heavy axle-load rated van tyre with cool-running compound designed for long-haul fleet operations.",
+                image: "images/DURAVANS-BV28.png",
+                link: "contact.html",
+                rimMin: 14, rimMax: 16,
+                widthMin: 165, widthMax: 225,
+                aspectMin: 60, aspectMax: 80,
+                speedRating: "R \u2013 H",
+                badge: "Commercial",
+                badgeColor: "bg-green-700"
+            }
+        ];
+
+        // Smooth scroll to element
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Tyre Finder Search
+        function handleSearch() {
+            const width = document.getElementById('searchWidth').value;
+            const aspect = document.getElementById('searchAspect').value;
+            const rim = document.getElementById('searchRim').value;
+            const category = document.getElementById('searchCategory').value;
+
+            const w = width ? parseInt(width) : null;
+            const a = aspect ? parseInt(aspect) : null;
+            const r = rim ? parseInt(rim) : null;
+
+            const results = productDB.filter(p => {
+                if (w && (w < p.widthMin || w > p.widthMax)) return false;
+                if (a && (a < p.aspectMin || a > p.aspectMax)) return false;
+                if (r && (r < p.rimMin || r > p.rimMax)) return false;
+                if (category && p.category !== category) return false;
+                return true;
+            });
+
+            renderResults(results, { width: w, aspect: a, rim: r, category });
+        }
+
+        function renderResults(results, filters) {
+            const section = document.getElementById('search-results');
+            const grid = document.getElementById('search-results-grid');
+            const countEl = document.getElementById('search-results-count');
+            const noResults = document.getElementById('search-no-results');
+
+            section.classList.remove('hidden');
+
+            const filterParts = [];
+            if (filters.width) filterParts.push(filters.width + 'mm width');
+            if (filters.aspect) filterParts.push(filters.aspect + ' aspect');
+            if (filters.rim) filterParts.push('R' + filters.rim);
+            if (filters.category) filterParts.push(filters.category.toUpperCase());
+
+            countEl.textContent = results.length + ' tyre' + (results.length !== 1 ? 's' : '') + ' found' + (filterParts.length ? ' \u2013 ' + filterParts.join(', ') : ' across all sizes');
+
+            if (results.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                grid.innerHTML = results.map(p => {
+                    const linkTarget = p.link === 'contact.html' ? p.link + '?product=' + p.name.toLowerCase().replace(/\s+/g, '-') : p.link;
+                    return '<div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2">' +
+                        '<div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">' +
+                        '<span class="absolute top-3 left-3 ' + p.badgeColor + ' text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">' + p.badge + '</span>' +
+                        '<img src="' + p.image + '" alt="' + p.name + '" class="w-36 h-36 object-contain drop-shadow-lg">' +
+                        '</div>' +
+                        '<span class="text-brand-red font-black text-sm tracking-wider">' + p.brand.toUpperCase() + '</span>' +
+                        '<h3 class="font-display font-bold text-lg text-slate-900 mt-1">' + p.name + '</h3>' +
+                        '<p class="text-[11px] text-slate-500 mt-0.5">' + p.tagline + '</p>' +
+                        '<p class="text-[11px] text-slate-600 mt-2 leading-relaxed">' + p.desc + '</p>' +
+                        '<div class="mt-3 space-y-1 text-[11px] text-slate-600">' +
+                        '<div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">' + p.rimMin + '" \u2013 ' + p.rimMax + '"</span></div>' +
+                        '<div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">' + p.widthMin + ' \u2013 ' + p.widthMax + ' mm</span></div>' +
+                        '<div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">' + p.speedRating + '</span></div>' +
+                        '</div>' +
+                        '<a href="' + linkTarget + '" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>' +
+                        '</div>';
+                }).join('');
+            }
+
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            lucide.createIcons();
+        }
+
+        function clearSearch() {
+            document.getElementById('searchWidth').value = '';
+            document.getElementById('searchAspect').value = '';
+            document.getElementById('searchRim').value = '';
+            document.getElementById('searchCategory').value = '';
+            document.getElementById('search-results').classList.add('hidden');
+            scrollToSection('tire-finder');
+        }
+
+        // Hotspot content drawer
+        function showHotspotDetail(key) {
+            const modal = document.getElementById('infoModal');
+            const content = document.getElementById('modalContent');
+
+            const details = {
+                safety: {
+                    title: 'Safety Technologies',
+                    icon: 'shield-check',
+                    text: 'High-angle longitudinal grooves prevent hydroplaning during heavy seasonal downpours. High-tensile steel belts and reinforced carcasses built to handle heavy vehicle loads and heat stress.'
+                },
+                tests: {
+                    title: 'Australian Road Tested',
+                    icon: 'star',
+                    text: 'Engineered for high-speed interstate highway touring, rough regional tarmac, and extreme outback corrugated trails. Meets Australian Design Rules (ADR) and international safety benchmarks.'
+                },
+                assortment: {
+                    title: 'Comprehensive Product Range',
+                    icon: 'layers',
+                    text: 'From High Performance (HP) and Ultra High Performance (UHP) to dedicated Electric Vehicle (EV), Highway Terrain (HT), All-Terrain (AT), and Commercial Van specifications.'
+                }
+            };
+
+            const data = details[key] || details.safety;
+
+            content.innerHTML = `
+                <div class="flex items-center gap-3 mb-3 text-brand-red">
+                    <div class="w-10 h-10 rounded-2xl bg-red-50 flex items-center justify-center">
+                        <i data-lucide="${data.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900">${data.title}</h3>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-6">${data.text}</p>
+                <button onclick="closeModal('infoModal')" class="w-full py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs">Close</button>
+            `;
+
+            lucide.createIcons();
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

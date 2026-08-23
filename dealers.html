@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Dealer - THE NEXT GEN VIC PTY LTD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60012',
+                            redhover: '#cc0010',
+                            dark: '#0F172A',
+                            slate: '#F1F5F9',
+                            accent: '#2563EB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        #map { height: 500px; width: 100%; border-radius: 1rem; z-index: 1; }
+        .dealer-popup .leaflet-popup-content-wrapper { border-radius: 1rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        .dealer-popup .leaflet-popup-content { margin: 12px 16px; }
+    </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="Index.html" class="flex items-center group">
+                <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-[113px] w-auto group-hover:scale-105 transition-transform">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="Index.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="about.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                <a href="products.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Products</a>
+                <a href="contact.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="dealers.html" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dealers Hero -->
+    <section class="relative py-24 bg-gradient-to-b from-slate-200/40 via-slate-100/20 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Locator</span>
+                </div>
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Find a Dealer
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    Locate your nearest authorised Praxent fitment centre across Australia for expert installation and service.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="py-6 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Search by city, state, or zip code..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                </div>
+                <button onclick="searchDealers()" class="px-8 py-3.5 bg-brand-red hover:bg-brand-redhover text-white font-bold text-sm rounded-xl transition-all shadow-lg shadow-brand-red/20 flex items-center justify-center gap-2">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                    <span>Search</span>
+                </button>
+                <button onclick="useMyLocation()" class="px-6 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="locate" class="w-4 h-4"></i>
+                    <span>My Location</span>
+                </button>
+            </div>
+            <div class="mt-3 flex items-center gap-4 text-xs text-slate-500">
+                <span id="dealerCount">0 dealers found</span>
+                <span>|</span>
+                <button onclick="resetMap()" class="text-brand-red hover:text-brand-redhover font-semibold transition-colors">Reset View</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Dealer List -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Map -->
+                <div class="lg:col-span-2">
+                    <div id="map" class="shadow-xl border border-slate-200"></div>
+                </div>
+
+                <!-- Dealer List Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl border border-slate-200/80 shadow-lg overflow-hidden">
+                        <div class="p-6 border-b border-slate-200/80">
+                            <h2 class="font-display font-bold text-xl text-slate-900">Nearby Dealers</h2>
+                            <p class="text-xs text-slate-500 mt-1">Click a dealer for details</p>
+                        </div>
+                        <div id="dealerList" class="max-h-[420px] overflow-y-auto">
+                            <div class="p-8 text-center text-slate-400 text-sm">
+                                <i data-lucide="map-pin" class="w-10 h-10 mx-auto mb-3 text-slate-300"></i>
+                                <p>No dealers found.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="Index.html" class="flex items-center gap-2 text-white font-display font-black text-lg mb-3">
+                        <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 w-auto">
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Exclusive importer and master distributor of world-class Praxent and Botrian tyre brands across Australia.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Products</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="products.html" class="hover:text-white transition-colors">High Performance (HP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Ultra High Performance (UHP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Electric Vehicle (EV)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">All-Terrain & Highway</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Support</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 THE NEXT GEN VIC PTY LTD. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- MAP INITIALIZATION ---
+        let map;
+        let markers = [];
+        let dealerData = [];
+
+        function initMap() {
+            map = L.map('map').setView([20, 0], 2);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 18
+            }).addTo(map);
+
+            loadDealers();
+        }
+
+        // --- CUSTOM MARKER ICON ---
+        function createIcon() {
+            return L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="width:32px;height:32px;background:#E60012;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -34]
+            });
+        }
+
+        // --- LOCALSTORAGE ---
+        function saveDealers() {
+            localStorage.setItem('fraxent_dealers', JSON.stringify(dealerData));
+        }
+
+        function loadDealers() {
+            const stored = localStorage.getItem('fraxent_dealers');
+            if (stored) {
+                dealerData = JSON.parse(stored);
+            } else {
+                // Default demo dealers
+                dealerData = [
+                    { id: 1, name: "Melbourne Tyre World", phone: "+61 3 9555 0100", address: "320 Collins Street", city: "Melbourne", state: "VIC", country: "Australia", lat: -37.8136, lng: 144.9631, email: "melbourne@thnextgen.com.au", website: "", services: ["Installation","Rotation","Balancing","Alignment","Repair"] },
+                    { id: 2, name: "Sydney Tyre Pros", phone: "+61 2 9555 0200", address: "George Street 200", city: "Sydney", state: "NSW", country: "Australia", lat: -33.8688, lng: 151.2093, email: "sydney@thnextgen.com.au", website: "", services: ["Installation","Balancing","Alignment"] },
+                    { id: 3, name: "Brisbane Auto Tyres", phone: "+61 7 3555 0300", address: "Adelaide Street 150", city: "Brisbane", state: "QLD", country: "Australia", lat: -27.4698, lng: 153.0251, email: "brisbane@thnextgen.com.au", website: "", services: ["Installation","Rotation","Repair"] },
+                    { id: 4, name: "Perth Tyre Hub", phone: "+61 8 9355 0400", address: "St Georges Terrace 100", city: "Perth", state: "WA", country: "Australia", lat: -31.9505, lng: 115.8605, email: "perth@thnextgen.com.au", website: "", services: ["Installation","Rotation","Balancing","Alignment"] },
+                    { id: 5, name: "Adelaide Tyre Centre", phone: "+61 8 8255 0500", address: "King William Street 80", city: "Adelaide", state: "SA", country: "Australia", lat: -34.9285, lng: 138.6007, email: "adelaide@thnextgen.com.au", website: "", services: ["Installation","Balancing","Alignment","Repair"] }
+                ];
+                saveDealers();
+            }
+            renderDealers();
+        }
+
+        // --- RENDER ---
+        function renderDealers(filtered) {
+            const list = filtered || dealerData;
+
+            // Clear existing markers
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            // Clear sidebar
+            const listEl = document.getElementById('dealerList');
+            listEl.innerHTML = '';
+
+            if (list.length === 0) {
+                listEl.innerHTML = `<div class="p-8 text-center text-slate-400 text-sm">
+                    <i data-lucide="map-pin" class="w-10 h-10 mx-auto mb-3 text-slate-300"></i>
+                    <p>No dealers found.</p>
+                </div>`;
+                lucide.createIcons();
+                document.getElementById('dealerCount').textContent = '0 dealers found';
+                return;
+            }
+
+            document.getElementById('dealerCount').textContent = list.length + ' dealer' + (list.length !== 1 ? 's' : '') + ' found';
+
+            const bounds = [];
+
+            list.forEach(dealer => {
+                // Map marker
+                const marker = L.marker([dealer.lat, dealer.lng], { icon: createIcon() })
+                    .addTo(map)
+                    .bindPopup(`
+                        <div style="font-family:Outfit,sans-serif;min-width:200px;">
+                            <h3 style="font-weight:700;font-size:15px;color:#0f172a;margin:0 0 4px;">${dealer.name}</h3>
+                            <p style="font-size:12px;color:#64748b;margin:0;">${dealer.address}, ${dealer.city}, ${dealer.country}</p>
+                            <p style="font-size:12px;color:#E60012;font-weight:600;margin:6px 0 0;">${dealer.phone}</p>
+                            ${dealer.services && dealer.services.length ? '<div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;">' + dealer.services.map(s => '<span style="font-size:10px;background:#f1f5f9;padding:2px 8px;border-radius:99px;color:#475569;">' + s + '</span>').join('') + '</div>' : ''}
+                        </div>
+                    `, { className: 'dealer-popup' });
+
+                markers.push(marker);
+                bounds.push([dealer.lat, dealer.lng]);
+
+                // Sidebar card
+                const card = document.createElement('div');
+                card.className = 'p-4 border-b border-slate-100 hover:bg-slate-50 cursor-pointer transition-colors';
+                card.onclick = () => {
+                    map.setView([dealer.lat, dealer.lng], 14);
+                    marker.openPopup();
+                };
+                card.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-display font-bold text-sm text-slate-900 truncate">${dealer.name}</h3>
+                            <p class="text-xs text-slate-500 truncate">${dealer.address}, ${dealer.city}</p>
+                            <p class="text-xs text-brand-red font-semibold mt-1">${dealer.phone}</p>
+                            ${dealer.services && dealer.services.length ? '<div class="flex flex-wrap gap-1 mt-2">' + dealer.services.map(s => '<span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded-full text-slate-600">' + s + '</span>').join('') + '</div>' : ''}
+                        </div>
+                    </div>
+                `;
+                listEl.appendChild(card);
+            });
+
+            lucide.createIcons();
+
+            if (bounds.length > 0) {
+                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 13 });
+            }
+        }
+
+        // --- SEARCH ---
+        function searchDealers() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) { renderDealers(); return; }
+
+            const filtered = dealerData.filter(d =>
+                d.name.toLowerCase().includes(query) ||
+                d.city.toLowerCase().includes(query) ||
+                d.state.toLowerCase().includes(query) ||
+                d.country.toLowerCase().includes(query) ||
+                d.address.toLowerCase().includes(query)
+            );
+            renderDealers(filtered);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') searchDealers();
+        });
+
+        // --- MY LOCATION ---
+        function useMyLocation() {
+            if (!navigator.geolocation) { alert('Geolocation is not supported.'); return; }
+            navigator.geolocation.getCurrentPosition(pos => {
+                map.setView([pos.coords.latitude, pos.coords.longitude], 12);
+            }, () => { alert('Unable to get your location.'); });
+        }
+
+        // --- RESET ---
+        function resetMap() {
+            document.getElementById('searchInput').value = '';
+            renderDealers();
+            map.setView([-25.2744, 133.7751], 4);
+        }
+
+        // --- INIT ---
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            initMap();
+        });
+    </script>
+</body>
+</html>

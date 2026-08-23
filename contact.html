@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - THE NEXT GEN VIC PTY LTD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60012',
+                            redhover: '#cc0010',
+                            dark: '#0F172A',
+                            slate: '#F1F5F9',
+                            accent: '#2563EB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="Index.html" class="flex items-center group">
+                <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-[113px] w-auto group-hover:scale-105 transition-transform">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="Index.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="about.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                <a href="products.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Products</a>
+                <a href="contact.html" class="relative py-2 text-brand-red font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-red after:transition-all after:duration-300">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="dealers.html" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="relative py-24 bg-gradient-to-b from-slate-200/40 via-slate-100/20 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Get in Touch</span>
+                </div>
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Contact Us
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    Whether you are a wholesale dealer, commercial fleet operator, or retail fitment centre, our team is ready to support your business with technical consultation and competitive distribution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="relative py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-slate-200/80 shadow-xl">
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 mb-6">Send Us a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-2">First Name</label>
+                                <input type="text" placeholder="John" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-2">Last Name</label>
+                                <input type="text" placeholder="Doe" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-2">Email Address</label>
+                            <input type="email" placeholder="john@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-2">Phone Number</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-2">Subject</label>
+                            <select id="subjectSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all">
+                                <option value="wholesale">Wholesale Distribution Inquiry</option>
+                                <option value="fleet">Commercial Fleet Contract</option>
+                                <option value="retail">Retail Dealership Opportunity</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="warranty">Warranty Claim</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="excelander-ph08">Praxent Excelander PH08</option>
+                                <option value="excelander-ph07">Praxent Excelander PH07</option>
+                                <option value="furijeter-pu90">Praxent Furijeter PU90</option>
+                                <option value="evoltour-pev80">Praxent Evoltour PEV80</option>
+                                <option value="patheris-pt7">Praxent Patheris PT7</option>
+                                <option value="robavans-pv18">Praxent Robavans PV18</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-2">Message</label>
+                            <textarea rows="4" placeholder="Tell us how we can help you..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 transition-all resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-brand-red hover:bg-brand-redhover text-white font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Quick Contact Cards -->
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-50 to-red-100 text-brand-red flex items-center justify-center shadow-md flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-slate-900 mb-1">Call Us</h3>
+                                <p class="text-slate-600 text-sm">Business Inquiries: <span class="font-semibold text-slate-900">Contact us via email</span></p>
+                                <p class="text-slate-600 text-sm mt-1">Technical Hotline: <span class="font-semibold text-slate-900">Contact us via email</span></p>
+                                <p class="text-xs text-slate-500 mt-2">We respond to all inquiries within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-700 flex items-center justify-center shadow-md flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-slate-900 mb-1">Email Us</h3>
+                                <p class="text-slate-600 text-sm">General & Business: <span class="font-semibold text-slate-900">info@thenextgenvic.com.au</span></p>
+                                <p class="text-slate-600 text-sm mt-1">Wholesale & Distribution: <span class="font-semibold text-slate-900">info@thenextgenvic.com.au</span></p>
+                                <p class="text-slate-600 text-sm mt-1">Website: <span class="font-semibold text-slate-900">thenextgenvic.com.au</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 text-green-700 flex items-center justify-center shadow-md flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-slate-900 mb-1">Visit Us</h3>
+                                <p class="text-slate-600 text-sm">Headquarters & Distribution Hub:</p>
+                                <p class="font-semibold text-slate-900 text-sm">THE NEXT GEN VIC PTY LTD</p>
+                                <p class="text-slate-600 text-sm">5 Advance Bvd</p>
+                                <p class="text-slate-600 text-sm">Officer South VIC 3809, Australia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 text-purple-700 flex items-center justify-center shadow-md flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-lg text-slate-900 mb-1">Business Hours</h3>
+                                <p class="text-slate-600 text-sm">Monday - Friday: <span class="font-semibold text-slate-900">8:00 AM - 6:00 PM</span></p>
+                                <p class="text-slate-600 text-sm mt-1">Saturday: <span class="font-semibold text-slate-900">9:00 AM - 2:00 PM</span></p>
+                                <p class="text-slate-600 text-sm mt-1">Sunday: <span class="font-semibold text-slate-900">Closed</span></p>
+                                <p class="text-xs text-slate-500 mt-2">*Local time (AEST)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-20 bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08]">
+                    Ready to Find Your Perfect Tyre?
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">
+                    Browse our complete product catalog or locate your nearest authorized dealer.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="products.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-red text-white font-bold text-sm hover:bg-brand-redhover transition-all shadow-xl shadow-brand-red/30">
+                        <i data-lucide="package" class="w-4 h-4"></i>
+                        <span>View Products</span>
+                    </a>
+                    <a href="dealers.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/10 border border-white/20 text-white font-bold text-sm hover:bg-white/20 transition-all">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Find a Dealer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="Index.html" class="flex items-center gap-2 text-white font-display font-black text-lg mb-3">
+                        <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 w-auto">
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Exclusive importer and master distributor of world-class Praxent and Botrian tyre brands across Australia.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Products</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="products.html" class="hover:text-white transition-colors">High Performance (HP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Ultra High Performance (UHP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Electric Vehicle (EV)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">All-Terrain & Highway</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Support</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 THE NEXT GEN VIC PTY LTD. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dealer Locator Modal -->
+    <div id="dealerModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative">
+            <button onclick="closeModal('dealerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h3 class="font-display font-extrabold text-2xl text-slate-900 mb-2">Find a Certified Dealer</h3>
+            <p class="text-sm text-slate-600 mb-6">Enter your city or postcode to locate an authorised Praxent fitment centre near you.</p>
+            <div class="flex gap-2 mb-4">
+                <input type="text" placeholder="Enter postcode or city..." class="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-red">
+                <button onclick="window.location.href='dealers.html'" class="bg-brand-red hover:bg-brand-redhover text-white font-bold px-6 py-3 rounded-xl text-sm">
+                    Search
+                </button>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl text-xs text-slate-500">
+                Authorised dealers across all Australian states and territories.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+
+            const params = new URLSearchParams(window.location.search);
+            const product = params.get('product');
+            if (product) {
+                const select = document.getElementById('subjectSelect');
+                if (select) {
+                    const option = select.querySelector('option[value="' + product + '"]');
+                    if (option) {
+                        select.value = product;
+                    }
+                }
+            }
+        });
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Our team will get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

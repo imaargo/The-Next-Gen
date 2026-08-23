@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - THE NEXT GEN VIC PTY LTD | Praxent &amp; Botrian Tyres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60012',
+                            redhover: '#cc0010',
+                            dark: '#0F172A',
+                            slate: '#F1F5F9',
+                            accent: '#2563EB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="Index.html" class="flex items-center group">
+                <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-[113px] w-auto group-hover:scale-105 transition-transform">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="Index.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="about.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                <a href="products.html" class="relative py-2 text-brand-red font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-brand-red after:transition-all after:duration-300">Products</a>
+                <a href="contact.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="dealers.html" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative py-24 bg-gradient-to-b from-slate-200/40 via-slate-100/20 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white"><i data-lucide="package" class="w-3.5 h-3.5"></i></div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Praxent &amp; Botrian</span>
+                </div>
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">Our Tyre Range</h1>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">From High Performance to Highway Terrain and Commercial Van specifications, every tyre is engineered for uncompromising safety, durability, and comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-white border-y border-slate-200 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <button class="px-6 py-2.5 rounded-full bg-brand-red text-white text-sm font-bold transition-all shadow-md shadow-brand-red/20" onclick="filterCategory('all')">All Products</button>
+                <button class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all" onclick="filterCategory('hp')">High Performance</button>
+                <button class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all" onclick="filterCategory('uhp')">Ultra High Performance</button>
+                <button class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all" onclick="filterCategory('ev')">Electric Vehicle</button>
+                <button class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all" onclick="filterCategory('ht')">Highway Terrain</button>
+                <button class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all" onclick="filterCategory('commercial')">Commercial Van</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-16 pb-6 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-5">
+                <img src="images/praxent logo.png" alt="Praxent" class="h-14 w-auto">
+                <div>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Praxent Tyres</h2>
+                    <p class="text-slate-500 text-sm mt-0.5">Performance, durability and quiet comfort engineered for Australian roads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="hp">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HP</span>
+                        <img src="images/EXCELANDER-PH07.png" alt="Excelander PH07" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Excelander PH07</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Everyday Comfort &amp; Efficiency</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Reliable all-season performance with optimised tread compound for even wear and fuel efficiency on Australian roads.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">13" &ndash; 16"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">175 &ndash; 215 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">55 &ndash; 70</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">T &ndash; V</span></div>
+                    </div>
+                    <a href="contact.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="hp">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HP</span>
+                        <img src="images/EXCELANDER-PH08.png" alt="Excelander PH08" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Excelander PH08</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Quiet Comfort &amp; Eco-Efficiency</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">4 longitudinal water-evacuation channels and seagull-wing bionic pitch technology to eliminate cabin road roar.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">13" &ndash; 16"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">185 &ndash; 225 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">55 &ndash; 70</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">T &ndash; V</span></div>
+                    </div>
+                    <a href="excelander-ph08.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="uhp">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">UHP</span>
+                        <img src="images/FURIJETER-PU90.png" alt="Furijeter PU90" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Furijeter PU90</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Boundless Control &amp; Precision</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Meteor-inspired lateral grooves and silica-reinforced compound for instant braking and maximum cornering grip.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">15" &ndash; 22"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">195 &ndash; 285 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">35 &ndash; 55</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">V &ndash; Y (Up to 300 km/h)</span></div>
+                    </div>
+                    <a href="furijeter-pu90.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="ev">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">EV</span>
+                        <img src="images/EVOLTOUR-PEV80.png" alt="Evoltour PEV80" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Evoltour PEV80</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Instant Torque &amp; Extended Range</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Solution-polymerized SBR compound for lower rolling resistance, high battery efficiency, and cabin silence.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">17" &ndash; 21" (XL)</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">205 &ndash; 255 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">40 &ndash; 55</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">V &ndash; W</span></div>
+                    </div>
+                    <a href="evoltour-pev80.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="ht">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-green-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HT</span>
+                        <img src="images/PATHERIS-PT7.png" alt="Patheris PT7" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Patheris PT7</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">All-Season Highway Touring</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Balanced steel-sheet-to-groove ratio prevents stone drilling and guarantees even treadwear across long Australian highway journeys.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">15" &ndash; 22"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">205 &ndash; 285 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">45 &ndash; 75</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">H &ndash; W</span></div>
+                    </div>
+                    <a href="patheris-pt7.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="commercial">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-slate-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">Commercial</span>
+                        <img src="images/ROBAVANS-PV18.png" alt="Robavans PV18" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-brand-red font-black text-sm tracking-wider">PRAXENT</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Robavans PV18</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">High Mileage &amp; Heavy Axle Loads</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Full C-spec commercial van tyre with reinforced radial ribs designed to handle commercial payload stresses without irregular wear.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">13" &ndash; 17"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">155 &ndash; 235 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Load Capacity:</span><span class="font-bold text-slate-800">Up to 1450 kg/tyre</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">Q &ndash; H</span></div>
+                    </div>
+                    <a href="robavans-pv18.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-16 pb-6 bg-gradient-to-b from-white to-[#F4F5F7]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-5">
+                <img src="images/botrian logo.png" alt="Botrian" class="h-14 w-auto">
+                <div>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">Botrian Tyres</h2>
+                    <p class="text-slate-500 text-sm mt-0.5">Rugged reliability and premium performance for demanding conditions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 bg-gradient-to-b from-[#F4F5F7] to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="hp">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HP</span>
+                        <img src="images/ACCELEROAD-BC25.png" alt="Acceleroad BC25" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-green-700 font-black text-sm tracking-wider">BOTRIAN</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Acceleroad BC25</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Premium Highway Comfort</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Advanced silica compound for superior wet grip and fuel efficiency on Australian highways.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">15" &ndash; 20"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">195 &ndash; 265 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">50 &ndash; 65</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">H &ndash; V</span></div>
+                    </div>
+                    <a href="contact.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="uhp">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">UHP</span>
+                        <img src="images/VORTTEXA-BU78.png" alt="Vorttexa BU78" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-green-700 font-black text-sm tracking-wider">BOTRIAN</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Vorttexa BU78</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Extreme Handling &amp; Precision</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Aggressive directional tread pattern with high-grip silica compound for maximum lateral control and braking performance.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">17" &ndash; 22"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">215 &ndash; 295 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">30 &ndash; 50</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">W &ndash; Y (Up to 300 km/h)</span></div>
+                    </div>
+                    <a href="contact.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="ht">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">HT</span>
+                        <img src="images/TRANSVELO-BT6.png" alt="Transvelo BT6" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-green-700 font-black text-sm tracking-wider">BOTRIAN</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Transvelo BT6</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Highway Touring &amp; All-Weather</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Four-channel water evacuation and reinforced shoulder blocks for stable highway cruising in all weather conditions.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">16" &ndash; 20"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">215 &ndash; 275 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Aspect Ratio:</span><span class="font-bold text-slate-800">50 &ndash; 70</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">H &ndash; V</span></div>
+                    </div>
+                    <a href="contact.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+                <div class="product-card bg-white/90 backdrop-blur-sm rounded-3xl p-6 border border-slate-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:-translate-y-2" data-category="commercial">
+                    <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-green-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase shadow-md">Commercial</span>
+                        <img src="images/DURAVANS-BV28.png" alt="Duravans BV28" class="w-36 h-36 object-contain drop-shadow-lg">
+                    </div>
+                    <span class="text-green-700 font-black text-sm tracking-wider">BOTRIAN</span>
+                    <h3 class="font-display font-bold text-lg text-slate-900 mt-1">Duravans BV28</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Commercial Fleet Durability</p>
+                    <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">Heavy axle-load rated van tyre with cool-running compound designed for long-haul fleet operations.</p>
+                    <div class="mt-3 space-y-1 text-[11px] text-slate-600">
+                        <div class="flex justify-between"><span class="font-semibold">Rim Sizes:</span><span class="font-bold text-slate-800">14" &ndash; 16"</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Tread Width:</span><span class="font-bold text-slate-800">165 &ndash; 225 mm</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Load Capacity:</span><span class="font-bold text-slate-800">Up to 1350 kg/tyre</span></div>
+                        <div class="flex justify-between"><span class="font-semibold">Speed Rating:</span><span class="font-bold text-slate-800">R &ndash; H</span></div>
+                    </div>
+                    <a href="contact.html" class="mt-5 w-full py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-xs font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 text-center block">Enquire Now</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-20 bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/20 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 -top-20 w-60 h-60 bg-brand-red/10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08]">Need help choosing the right tyre?</h2>
+                <p class="text-slate-400 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed font-normal">Our technical advisors are ready to help wholesale dealers, commercial fleets, and retail fitment centres find the perfect match.</p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-red text-white font-bold text-sm hover:bg-brand-redhover transition-all shadow-xl shadow-brand-red/30">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>Contact Our Experts</span>
+                    </a>
+                    <a href="dealers.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/10 border border-white/20 text-white font-bold text-sm hover:bg-white/20 transition-all">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Find a Dealer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="Index.html" class="flex items-center gap-2 text-white font-display font-black text-lg mb-3">
+                        <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 w-auto">
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">Exclusive importer and master distributor of world-class Praxent and Botrian tyre brands across Australia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Products</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="products.html" class="hover:text-white transition-colors">High Performance (HP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Ultra High Performance (UHP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Electric Vehicle (EV)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Highway Terrain &amp; Commercial Van</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="Index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Contact</h4>
+                    <p class="text-xs text-slate-400">5 Advance Bvd<br>Officer South VIC 3809<br>Australia</p>
+                    <p class="text-xs text-slate-400 mt-2">Email:<br><span class="text-white font-bold">info@thenextgenvic.com.au</span></p>
+                    <a href="dealers.html" class="inline-flex items-center gap-1 mt-3 text-xs text-brand-red hover:text-brand-redhover transition-colors font-semibold">
+                        <span>Find a Dealer</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 THE NEXT GEN VIC PTY LTD. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('button[onclick]');
+            buttons.forEach(b => {
+                const match = b.getAttribute("onclick").match(/filterCategory\('(.+?)'\)/);
+                if (match && match[1] === category) {
+                    b.className = "px-6 py-2.5 rounded-full bg-brand-red text-white text-sm font-bold transition-all shadow-md shadow-brand-red/20";
+                } else if (match) {
+                    b.className = "px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-bold hover:bg-slate-200 transition-all";
+                }
+            });
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
