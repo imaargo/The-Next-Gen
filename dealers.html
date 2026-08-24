@@ -260,26 +260,31 @@
             });
         }
 
-        // --- LOCALSTORAGE ---
-        function saveDealers() {
-            localStorage.setItem('fraxent_dealers', JSON.stringify(dealerData));
-        }
-
         function loadDealers() {
-            const stored = localStorage.getItem('fraxent_dealers');
-            if (stored) {
-                dealerData = JSON.parse(stored);
-            } else {
-                // Default demo dealers
-                dealerData = [
-                    { id: 1, name: "Melbourne Tyre World", phone: "+61 3 9555 0100", address: "320 Collins Street", city: "Melbourne", state: "VIC", country: "Australia", lat: -37.8136, lng: 144.9631, email: "melbourne@thnextgen.com.au", website: "", services: ["Installation","Rotation","Balancing","Alignment","Repair"] },
-                    { id: 2, name: "Sydney Tyre Pros", phone: "+61 2 9555 0200", address: "George Street 200", city: "Sydney", state: "NSW", country: "Australia", lat: -33.8688, lng: 151.2093, email: "sydney@thnextgen.com.au", website: "", services: ["Installation","Balancing","Alignment"] },
-                    { id: 3, name: "Brisbane Auto Tyres", phone: "+61 7 3555 0300", address: "Adelaide Street 150", city: "Brisbane", state: "QLD", country: "Australia", lat: -27.4698, lng: 153.0251, email: "brisbane@thnextgen.com.au", website: "", services: ["Installation","Rotation","Repair"] },
-                    { id: 4, name: "Perth Tyre Hub", phone: "+61 8 9355 0400", address: "St Georges Terrace 100", city: "Perth", state: "WA", country: "Australia", lat: -31.9505, lng: 115.8605, email: "perth@thnextgen.com.au", website: "", services: ["Installation","Rotation","Balancing","Alignment"] },
-                    { id: 5, name: "Adelaide Tyre Centre", phone: "+61 8 8255 0500", address: "King William Street 80", city: "Adelaide", state: "SA", country: "Australia", lat: -34.9285, lng: 138.6007, email: "adelaide@thnextgen.com.au", website: "", services: ["Installation","Balancing","Alignment","Repair"] }
-                ];
-                saveDealers();
-            }
+            // Always use authoritative dealer list — clear any stale localStorage
+            localStorage.removeItem('fraxent_dealers');
+            dealerData = [
+                { id: 1, name: "Tech Solution VIC Pty Ltd", phone: "0451 778 015", address: "3B Tarmac Way", city: "Pakenham", state: "VIC", country: "Australia", lat: -38.1008, lng: 145.4864, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 2, name: "Leo Auto Services", phone: "0430 316 319", address: "Cambria Road", city: "Keysborough", state: "VIC", country: "Australia", lat: -37.9896, lng: 145.1883, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 3, name: "KANDK Automotive", phone: "0404 585 613", address: "17 Arnold Street", city: "Noble Park", state: "VIC", country: "Australia", lat: -37.9730, lng: 145.1831, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 4, name: "Disek Auto Mobile", phone: "0469 067 705", address: "14 Plunkett Road", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9980, lng: 145.2240, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 5, name: "Auto 360 Solutions", phone: "0414 080 385", address: "14 Hogan Court", city: "Pakenham", state: "VIC", country: "Australia", lat: -38.0834, lng: 145.4977, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 6, name: "SDJ Tech", phone: "0430 706 730", address: "218-20 Rhur Street", city: "Dandenong South", state: "VIC", country: "Australia", lat: -38.0089, lng: 145.2097, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 7, name: "Hallam Techno Motors", phone: "0402 843 203", address: "3/19 Technology Circuit", city: "Hallam", state: "VIC", country: "Australia", lat: -38.0109, lng: 145.2610, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 8, name: "Hitek Auto Services", phone: "N/A", address: "U43/182 Bridge Road", city: "Keysborough", state: "VIC", country: "Australia", lat: -37.9836, lng: 145.1921, services: ["Installation","Balancing","Alignment"] },
+                { id: 9, name: "UG Automotive", phone: "0412 965 142", address: "28 Balmoral Avenue", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9973, lng: 145.2236, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 10, name: "Advance Auto Pty Ltd", phone: "0415 327 809", address: "1/5 Plunkett Road", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9963, lng: 145.2248, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 11, name: "SJ Transport Service Pty Ltd", phone: "0450 562 323", address: "10 Southeast Blvd", city: "Pakenham", state: "VIC", country: "Australia", lat: -38.0973, lng: 145.4839, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 12, name: "Perera Motor Engineers", phone: "0450 615 080", address: "4 Windale Street", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9973, lng: 145.2255, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 13, name: "Rent@once", phone: "N/A", address: "5/7 Plunkett Road", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9986, lng: 145.2244, services: ["Installation","Balancing","Alignment"] },
+                { id: 14, name: "Rentx Pty Ltd", phone: "0424 572 785", address: "9/13 Dingley Avenue", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9931, lng: 145.1963, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 15, name: "Epic Rent A Car", phone: "0468 745 010", address: "U37/11b Bryants Road", city: "Dandenong", state: "VIC", country: "Australia", lat: -37.9994, lng: 145.2138, services: ["Installation","Balancing","Alignment"] },
+                { id: 16, name: "SLK Express Pty Ltd", phone: "0403 725 991", address: "U5/44 Princes Hwy", city: "Eumemmerring", state: "VIC", country: "Australia", lat: -38.0031, lng: 145.2484, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 17, name: "HPS Tyre & Auto Repair", phone: "N/A", address: "2/12 Sette Circuit", city: "Pakenham", state: "VIC", country: "Australia", lat: -38.0938, lng: 145.4961, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 18, name: "Fabled Motorsport", phone: "N/A", address: "12/355-365 South Gippsland Hwy", city: "Dandenong South", state: "VIC", country: "Australia", lat: -38.0279, lng: 145.2456, services: ["Installation","Balancing","Alignment"] },
+                { id: 19, name: "Kandy Automotive", phone: "03 9704 0969", address: "5 Wally Place", city: "Lynbrook", state: "VIC", country: "Australia", lat: -38.0450, lng: 145.2500, services: ["Installation","Balancing","Alignment","Rotation","Repair"] },
+                { id: 20, name: "Motor Mania Mobile Car Detail", phone: "0466 655 975", address: "5-7 Hogan Court", city: "Pakenham", state: "VIC", country: "Australia", lat: -38.0849, lng: 145.4972, services: ["Installation","Balancing","Alignment","Rotation","Repair"] }
+            ];
             renderDealers();
         }
 
