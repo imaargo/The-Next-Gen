@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Dealer - THE NEXT GEN VIC PTY LTD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E60012',
+                            redhover: '#cc0010',
+                            dark: '#0F172A',
+                            slate: '#F1F5F9',
+                            accent: '#2563EB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .form-label { display: block; font-size: 0.75rem; font-weight: 600; color: #475569; margin-bottom: 0.5rem; }
+        .form-input { width: 100%; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 0.875rem 1rem; font-size: 0.875rem; transition: all 0.2s; }
+        .form-input:focus { outline: none; border-color: #E60012; box-shadow: 0 0 0 2px rgba(230,0,18,0.2); }
+        .check-item { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.8125rem; color: #475569; cursor: pointer; }
+        .check-item input { margin-top: 0.15rem; width: 1rem; height: 1rem; accent-color: #E60012; flex-shrink: 0; }
+        .section-num { width: 2.25rem; height: 2.25rem; border-radius: 0.75rem; background: linear-gradient(135deg, #E60012, #cc0010); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(230,0,18,0.3); }
+    </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center group">
+                <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 md:h-[113px] w-auto group-hover:scale-105 transition-transform">
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="index.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                <a href="about.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                <a href="products.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Products</a>
+                <a href="contact.html" class="relative py-2 text-slate-700 hover:text-brand-red transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 hover:after:w-full">Contact Us</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors flex-shrink-0">
+                    <i data-lucide="menu" class="w-5 h-5 text-slate-700"></i>
+                </button>
+                <a href="tel:0422445164" class="hidden lg:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-red"></i>
+                    0422 445 164
+                </a>
+                <a href="https://wa.me/61422445164" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-green-600"></i>
+                    WhatsApp
+                </a>
+                <a href="dealers.html" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand-red"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="toggleMobileMenu()"></div>
+        <div class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col">
+            <div class="flex items-center justify-between p-5 border-b border-slate-200">
+                <span class="font-display font-bold text-lg text-slate-900">Menu</span>
+                <button onclick="toggleMobileMenu()" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5 text-slate-700"></i>
+                </button>
+            </div>
+            <nav class="flex-1 overflow-y-auto p-5 space-y-1">
+                <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-red transition-colors">Home</a>
+                <a href="about.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-red transition-colors">About Us</a>
+                <a href="products.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-red transition-colors">Products</a>
+                <a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-red transition-colors">Contact Us</a>
+            </nav>
+            <div class="p-5 border-t border-slate-200 space-y-3">
+                <a href="tel:0422445164" class="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-red"></i>
+                    0422 445 164
+                </a>
+                <a href="https://wa.me/61422445164" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-green-600"></i>
+                    WhatsApp
+                </a>
+                <a href="dealers.html" class="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-brand-red text-white text-sm font-bold hover:bg-brand-redhover transition-colors">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    FIND DEALER
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative py-24 bg-gradient-to-b from-slate-200/40 via-slate-100/20 to-white overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-6">
+                    <div class="w-6 h-6 rounded-full bg-brand-red flex items-center justify-center text-white">
+                        <i data-lucide="handshake" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-xs font-bold tracking-wide text-slate-700 uppercase">Dealership &amp; Trade Partner</span>
+                </div>
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.08]">
+                    Partner with Praxent &amp; Botrian Australia
+                </h1>
+                <p class="text-sm sm:text-base font-semibold text-brand-red mt-4">
+                    Official Dealership &amp; Trade Partner Application &ndash; The Next Gen VIC Pty Ltd
+                </p>
+                <p class="text-slate-600 text-base sm:text-lg mt-4 max-w-2xl mx-auto leading-relaxed font-normal">
+                    Join our rapidly growing network of certified mechanical workshops, tyre fitment centres, and automotive retailers across Melbourne and regional Victoria. Gain direct wholesale access, marketing backing, and exclusive dealer territories.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Banner (hidden until submit) -->
+    <section id="confirmationBanner" class="hidden py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-green-50 border border-green-200 rounded-3xl p-8 text-center shadow-lg">
+                <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                </div>
+                <h2 class="font-display font-extrabold text-2xl text-slate-900">Application Submitted</h2>
+                <p class="text-slate-600 text-sm mt-3 max-w-xl mx-auto leading-relaxed">
+                    Thank you for applying to become an authorized Praxent &amp; Botrian Dealer. Our Wholesale Operations team from Dandenong South will review your application within 2 business days.
+                </p>
+                <a href="index.html" class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-brand-red text-white text-sm font-bold transition-all">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span>Return Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="applicationSection" class="relative py-16 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <form id="dealerForm" class="space-y-10">
+
+                <!-- Section 1 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">1</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Business Identity &amp; Legal Verification</h2>
+                            <p class="text-xs text-slate-500">ABN / ACN verification required</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Legal Registered Entity Name *</label>
+                            <input type="text" required placeholder="e.g., Apex Tyres Pty Ltd" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Trading Name / Business Name (DBA)</label>
+                            <input type="text" placeholder="e.g., Apex Auto Care Dandenong" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Australian Business Number (ABN) *</label>
+                            <input type="text" required inputmode="numeric" pattern="[0-9 ]{11,14}" placeholder="11-digit number" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Australian Company Number (ACN)</label>
+                            <input type="text" inputmode="numeric" placeholder="9-digit number (if Pty Ltd)" class="form-input">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Business Entity Type *</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                                <label class="check-item"><input type="radio" name="entityType" value="Pty Ltd"><span>Proprietary Limited Company (Pty Ltd)</span></label>
+                                <label class="check-item"><input type="radio" name="entityType" value="Sole Trader"><span>Sole Trader</span></label>
+                                <label class="check-item"><input type="radio" name="entityType" value="Partnership"><span>Partnership</span></label>
+                                <label class="check-item"><input type="radio" name="entityType" value="Trust"><span>Family Trust / Discretionary Trust</span></label>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Registered for GST? *</label>
+                            <div class="flex items-center gap-6 mt-1">
+                                <label class="check-item"><input type="radio" name="gst" value="Yes"><span>Yes</span></label>
+                                <label class="check-item"><input type="radio" name="gst" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Years in Active Operation</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>&lt; 1 year</option>
+                                <option>1 &ndash; 3 years</option>
+                                <option>3 &ndash; 5 years</option>
+                                <option>5+ years</option>
+                                <option>10+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">2</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Physical Premises &amp; Location Details</h2>
+                            <p class="text-xs text-slate-500">Used for dealer locator listing and route planning</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Street Address *</label>
+                            <input type="text" required placeholder="Street address of workshop / store" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Suburb *</label>
+                            <input type="text" required placeholder="e.g., Dandenong, Clayton, Frankston" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">State *</label>
+                            <select class="form-input">
+                                <option>VIC - Victoria</option>
+                                <option>NSW - New South Wales</option>
+                                <option>QLD - Queensland</option>
+                                <option>SA - South Australia</option>
+                                <option>WA - Western Australia</option>
+                                <option>TAS - Tasmania</option>
+                                <option>ACT - Australian Capital Territory</option>
+                                <option>NT - Northern Territory</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Postcode *</label>
+                            <input type="text" required inputmode="numeric" pattern="[0-9]{4}" placeholder="4-digit postcode" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Premises Status *</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>Commercial Owner-Occupied</option>
+                                <option>Commercial Lease</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Lease Expiry Date (if applicable)</label>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">3</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Primary Contact &amp; Key Management</h2>
+                            <p class="text-xs text-slate-500">Main point of contact for trade accounts</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Primary Contact Full Name *</label>
+                            <input type="text" required placeholder="First and last name" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Designation / Role *</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>Director</option>
+                                <option>Owner</option>
+                                <option>General Manager</option>
+                                <option>Purchasing Officer</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Direct Mobile Number *</label>
+                            <input type="tel" required placeholder="04XX XXX XXX" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Business Landline</label>
+                            <input type="tel" placeholder="(03) XXXX XXXX" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Official Business Email *</label>
+                            <input type="email" required placeholder="accounts@yourbusiness.com.au" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Business Website / Social Media Link</label>
+                            <input type="url" placeholder="https://..." class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">4</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Operational Capacity &amp; Workshop Infrastructure</h2>
+                            <p class="text-xs text-slate-500">Helps us gauge fitting and storage capability</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="form-label">Number of Fitment Bays / Hoists *</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>1 &ndash; 2 bays</option>
+                                <option>3 &ndash; 5 bays</option>
+                                <option>6+ bays</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">On-site Secure Storage Capacity</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>Under 100 tyres</option>
+                                <option>100 &ndash; 300 tyres</option>
+                                <option>300 &ndash; 800 tyres</option>
+                                <option>800+ tyres</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="form-label">On-site Equipment Available</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                                <label class="check-item"><input type="checkbox"><span>Tyre Mounting Machine (Passenger / 4WD)</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Dynamic Wheel Balancer</span></label>
+                                <label class="check-item"><input type="checkbox"><span>3D Wheel Alignment System</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Run-Flat Tyre Fitting Equipment</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Commercial Van / Heavy Equipment Fitting</span></label>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Do you provide mobile tyre fitting services?</label>
+                            <div class="flex items-center gap-6 mt-1">
+                                <label class="check-item"><input type="radio" name="mobileFit" value="Yes"><span>Yes</span></label>
+                                <label class="check-item"><input type="radio" name="mobileFit" value="No"><span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">5</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Brand Selection &amp; Projected Order Volumes</h2>
+                            <p class="text-xs text-slate-500">Tell us what you would like to stock</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Brands of Interest *</label>
+                            <div class="grid grid-cols-1 gap-3 mt-1">
+                                <label class="check-item"><input type="checkbox"><span>Praxent Tyres (Full range: PCR, SUV, Ultra High-Performance PU90, EV-Dedicated PEV80, Commercial PV18, Bosmutus AT)</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Botrian Tyres (Highway &amp; Touring: PH17, PH18)</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Both Brands (Full Distributorship)</span></label>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="form-label">Primary Customer Segments Served</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                                <label class="check-item"><input type="checkbox"><span>Passenger / Daily Commuter (PCR)</span></label>
+                                <label class="check-item"><input type="checkbox"><span>4WD / Off-Road &amp; Outdoor Enthusiasts (AT/MT)</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Commercial Fleets / Delivery Vans</span></label>
+                                <label class="check-item"><input type="checkbox"><span>Electric Vehicle (EV) Owners</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Estimated Initial Stocking Order Value *</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>AUD $5,000 &ndash; $10,000 (Introductory Starter Pack)</option>
+                                <option>AUD $10,000 &ndash; $25,000 (Standard Stockist)</option>
+                                <option>AUD $25,000 &ndash; $50,000+ (Regional Key Dealer)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label">Anticipated Monthly Purchase Frequency</label>
+                            <select class="form-input">
+                                <option value="">Select...</option>
+                                <option>Weekly</option>
+                                <option>Fortnightly</option>
+                                <option>Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">6</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Commercial Trade Account &amp; Credit Request</h2>
+                            <p class="text-xs text-slate-500">Choose your preferred trading terms</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <label class="form-label">Preferred Trading Terms *</label>
+                            <div class="grid grid-cols-1 gap-3 mt-1">
+                                <label class="check-item"><input type="radio" name="terms" value="Pre-payment"><span>Pre-payment (Proforma / COD) &ndash; Maximum trade discount applied</span></label>
+                                <label class="check-item"><input type="radio" name="terms" value="30-Day Credit"><span>30-Day Commercial Trade Credit (Requires Director Guarantee and Trade Credit Application submission)</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label">Bank Details for Verification (if credit requested)</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-1">
+                                <input type="text" placeholder="Bank Name" class="form-input">
+                                <input type="text" placeholder="BSB" class="form-input">
+                                <input type="text" placeholder="Account Number" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">7</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Document Uploads</h2>
+                            <p class="text-xs text-slate-500">Required supporting documentation</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div>
+                            <label class="form-label">Business Registration / ASIC Certificate *</label>
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png" class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-red file:text-white hover:file:bg-brand-redhover cursor-pointer">
+                            <p class="text-[11px] text-slate-400 mt-1.5">Accepted: PDF, JPG</p>
+                        </div>
+                        <div>
+                            <label class="form-label">Workshop Facade / Showroom Photo</label>
+                            <input type="file" accept=".jpg,.jpeg,.png" class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-slate-700 file:text-white hover:file:bg-slate-800 cursor-pointer">
+                            <p class="text-[11px] text-slate-400 mt-1.5">Accepted: JPG, PNG &ndash; used to review dealer branding standards</p>
+                        </div>
+                        <div>
+                            <label class="form-label">Public Liability Insurance Certificate of Currency *</label>
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png" class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-slate-700 file:text-white hover:file:bg-slate-800 cursor-pointer">
+                            <p class="text-[11px] text-slate-400 mt-1.5">Minimum AUD $10M&ndash;$20M cover as per standard VIC automotive trade norms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="section-num">8</span>
+                        <div>
+                            <h2 class="font-display font-extrabold text-lg text-slate-900">Legal Declarations &amp; Acceptance</h2>
+                            <p class="text-xs text-slate-500">Victoria &amp; Australian Trade Compliance</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="check-item"><input type="checkbox" required><span><strong class="text-slate-700">Truth &amp; Accuracy:</strong> I/We certify that all information supplied in this application is true, current, and correct.</span></label>
+                        <label class="check-item"><input type="checkbox" required><span><strong class="text-slate-700">Privacy Act 1988 Compliance:</strong> I/We acknowledge that The Next Gen VIC Pty Ltd may collect, store, and utilise this information for credit evaluation, distributor verification, and dealership administration in compliance with Australian Privacy Principles.</span></label>
+                        <label class="check-item"><input type="checkbox" required><span><strong class="text-slate-700">Territory &amp; Resale Policy:</strong> I/We acknowledge that approval as an Authorized Stockist is subject to written approval by The Next Gen VIC Pty Ltd and does not confer exclusive territory rights unless formalised via an explicit Territory Agreement.</span></label>
+                        <label class="check-item"><input type="checkbox" required><span><strong class="text-slate-700">Electronic Signature Consent:</strong> I consent to the electronic verification of this application under the Electronic Transactions (Victoria) Act 2000.</span></label>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+                        <div>
+                            <label class="form-label">Authorized Signatory Name *</label>
+                            <input type="text" required placeholder="Full name" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Designation *</label>
+                            <input type="text" required placeholder="e.g., Director" class="form-input">
+                        </div>
+                        <div>
+                            <label class="form-label">Date</label>
+                            <input type="date" id="signDate" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <button type="submit" class="w-full sm:flex-1 py-4 rounded-2xl bg-brand-red hover:bg-brand-redhover text-white font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-brand-red/20 flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>SUBMIT DEALER APPLICATION</span>
+                    </button>
+                    <button type="button" onclick="saveProgress()" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="save" class="w-4 h-4"></i>
+                        <span>SAVE PROGRESS</span>
+                    </button>
+                </div>
+                <p id="saveNote" class="text-xs text-center text-slate-400 hidden">Progress saved locally in your browser. Complete the application when ready.</p>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 text-white font-display font-black text-lg mb-3">
+                        <img src="images/The Next Gen Logo web with bg.png" alt="The Next Gen Tyres" class="h-10 w-auto">
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        importer and master distributor of world-class Praxent and Botrian tyre brands across Australia.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Products</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="products.html" class="hover:text-white transition-colors">High Performance (HP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Ultra High Performance (UHP)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">Electric Vehicle (EV)</a></li>
+                        <li><a href="products.html" class="hover:text-white transition-colors">All-Terrain &amp; Highway</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="dealers.html" class="hover:text-white transition-colors">Find a Dealer</a></li>
+                        <li><a href="become-a-dealer.html" class="hover:text-white transition-colors">Become a Dealer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-3">Contact</h4>
+                    <p class="text-xs text-slate-400">5 Advance Bvd<br>Officer South VIC 3809<br>Australia</p>
+                    <p class="text-xs text-slate-400 mt-2">Phone:<br><a href="tel:0422445164" class="text-white font-bold hover:text-brand-red transition-colors">0422 445 164</a></p>
+                    <p class="text-xs text-slate-400 mt-2">Email:<br><span class="text-white font-bold">info@thenextgenvic.com.au</span></p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 THE NEXT GEN VIC PTY LTD. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        // Set today's date on the signature date field
+        document.getElementById('signDate').value = new Date().toISOString().split('T')[0];
+
+        // Save progress to localStorage
+        function saveProgress() {
+            const form = document.getElementById('dealerForm');
+            const data = {};
+            form.querySelectorAll('input, select, textarea').forEach((el, i) => {
+                if (el.type === 'checkbox') {
+                    data['cb_' + i] = el.checked;
+                } else if (el.type === 'radio') {
+                    if (el.checked) data['radio_' + el.name] = el.value;
+                } else if (el.type !== 'file') {
+                    data['f_' + i] = el.value;
+                }
+            });
+            localStorage.setItem('ngv_dealer_application', JSON.stringify(data));
+            const note = document.getElementById('saveNote');
+            note.classList.remove('hidden');
+            setTimeout(() => note.classList.add('hidden'), 3000);
+        }
+
+        // Restore saved progress on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const stored = localStorage.getItem('ngv_dealer_application');
+            if (stored) {
+                try {
+                    const data = JSON.parse(stored);
+                    const form = document.getElementById('dealerForm');
+                    form.querySelectorAll('input, select, textarea').forEach((el, i) => {
+                        if (el.type === 'checkbox' && data['cb_' + i] !== undefined) el.checked = data['cb_' + i];
+                        else if (el.type === 'radio') { if (data['radio_' + el.name] === el.value) el.checked = true; }
+                        else if (el.type !== 'file' && data['f_' + i] !== undefined) el.value = data['f_' + i];
+                    });
+                } catch (e) { /* ignore */ }
+            }
+        });
+
+        // Handle submit
+        document.getElementById('dealerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('ngv_dealer_application');
+            document.getElementById('applicationSection').classList.add('hidden');
+            const banner = document.getElementById('confirmationBanner');
+            banner.classList.remove('hidden');
+            banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            lucide.createIcons();
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
